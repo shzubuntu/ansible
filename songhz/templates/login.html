@@ -1,0 +1,171 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<!--[if lt IE 7]>
+
+<html class="lt-ie9 lt-ie8 lt-ie7" lang="en">
+
+<![endif]-->
+<!--[if IE 7]>
+
+<html class="lt-ie9 lt-ie8" lang="en">
+
+<![endif]-->
+<!--[if IE 8]>
+
+<html class="lt-ie9" lang="en">
+
+<![endif]-->
+<!--[if gt IE 8]>
+<!-->
+
+<html lang="en">
+  
+  <!--
+<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <title>
+      自动化运维系统登录页面
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- bootstrap css -->
+
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+    <link href="{% static 'css/main.css' %}" rel="stylesheet"> <!-- Important. For Theming change primary-color variable in main.css  -->
+    <!--[if lte IE 7]>
+    <script src="{% static 'css/icomoon-font/lte-ie7.js' %}">
+    </script>
+    <![endif]-->
+  
+  </head>
+  <body>
+    <header>
+      <a href="#" class="logo">
+        <img src="{% static 'img/logo.png' %}" alt="Logo"/>
+      </a>
+      <ul class="mini-nav">
+        <li>
+          <a href="#">
+            <div class="fs1" aria-hidden="true" data-icon="&#xe040;"></div>
+            <span class="info-label badge badge-warning">
+              3
+            </span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <div class="fs1" aria-hidden="true" data-icon="&#xe04c;"></div>
+            <span class="info-label badge badge-info">
+              5
+            </span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <div class="fs1" aria-hidden="true" data-icon="&#xe037;"></div>
+            <span class="info-label badge badge-success">
+              9
+            </span>
+          </a>
+        </li>
+        
+      </ul>
+    </header>
+    <div class="container-fluid">
+      <div class="dashboard-container">
+        <div class="dashboard-wrapper">
+          <div class="left-sidebar">
+            
+            <div class="row-fluid">
+              
+              <div class="span12">
+                <div class="widget">
+                  <div class="widget-header">
+                    <div class="title">
+                      登录
+                    </div>
+                    <span class="tools">
+                      <a class="fs1" aria-hidden="true" data-icon="&#xe090;"></a>
+                    </span>
+                  </div>
+                  <div class="widget-body">
+                    <div class="span3"></div>
+                    <div class="span6">
+                      <div class="sign-in-container">
+                        <form action="#" class="login-wrapper" method="post">
+                          <div class="header">
+                            <div class="row-fluid">
+                              <div class="span12">
+                                <h3>登录<img src="{% static 'img/logo1.png' %}" alt="Logo" class="pull-right"></h3>
+                                <p>Fill out the form below to login.</p>
+                              </div>
+                            </div>
+                           
+                          </div>
+                          <div class="content">
+                            <div class="row-fluid">
+                              <div class="span12">
+                                <input class="input span12 email" id="" name="" placeholder="username" required="required" type="email" value="">
+                              </div>
+                            </div>
+                            <div class="row-fluid">
+                              <div class="span12">
+                                <input class="input span12 password" id="" name="" placeholder="Password" required="required" type="password">
+                              </div>
+                            </div>
+                          </div>
+                          <div class="actions">
+                            <input class="btn btn-danger" name="Login" type="submit" value="Login" >
+                            <a class="link" href="#">Forgot Password?</a>
+                            <div class="clearfix"></div>
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+                    <div class="span3"></div>
+                    <div class="clearfix"></div>
+                  </div>
+                </div>
+              </div>
+              
+            </div>
+            
+    
+          </div>
+          
+          
+          
+          </div>
+      </div>
+      <!--/.fluid-container-->
+    </div>
+    <footer>
+      <p>
+        &copy; 自动化运维 2019
+      </p>
+    </footer>
+    
+    <script src="{% static 'js/jquery.min.js' %}">
+    </script>
+    <script src="{% static 'js/bootstrap.js' %}">
+    </script>
+    
+    
+    <script type="text/javascript">
+      //Tooltip
+      $('a').tooltip('hide');
+
+      //Popover
+      $('.popover-pop').popover('hide');
+
+
+      //Collapse
+      $('#myCollapsible').collapse({
+        toggle: false
+      })
+    </script>
+  
+</body>
+</html>

@@ -23,4 +23,5 @@ urlpatterns = [
     url(r'^network/$', views.scan),
     url(r'show/$', views.gethost),
     url(r'showip/$', views.getip),
+    url(r'^home/$',views.index)
 ]

@@ -4,7 +4,7 @@ from __future__ import unicode_literals
 from django.http import HttpResponse
 from django.shortcuts import render
 
-from blog.models import Host,Ip
+from network.models import Host,Ip
 from toolbox.ansible_api import MyRunner
 from toolbox.tool import Network
 import json
@@ -27,8 +27,7 @@ def home(request):
 
     #print json.dumps(result,indent=4)
     hostlist=[]
-    print(type(result))
-    print result['success'].keys()
+    #print result['success'].keys()
     for host in result['success'].keys():
         res = result['success'][host]['stdout']
         hostlist.append((host,res))
@@ -87,3 +86,7 @@ def update_ip():
             comment = host.hostname
             Ip.objects.filter(ip=host.ip).update(status='used',comment=comment)
     pass
+def index(request):
+    context  = {}
+    context['hello'] = 'Hello World!'
+    return render(request, 'login.html', context)
