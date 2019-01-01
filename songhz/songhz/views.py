@@ -62,7 +62,7 @@ def getip(request):
 #扫描可用IP
 def scan(request):
     context= {}
-    net = "192.168.31.0/24"
+    net = "10.1.1.0/24"
     network = Network(net);
     hosts_up_list = network.get_hosts_up()
     for host in hosts_up_list:
