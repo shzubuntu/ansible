@@ -1,0 +1,11 @@
+---
+- name: run multiple commands on remote devices
+  hosts: cisco
+  gather_facts: false
+  connection: local
+
+  tasks:
+   - name: show ver and show ip int brief
+     ios_ping:
+       dest: 12.1.1.1
+       count: 5
