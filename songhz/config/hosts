@@ -1,2 +1,3 @@
 [test]
-10.1.1.128 ansible_ssh_user=songhz ansible_ssh_pass=123456
+#192.168.31.51 ansible_ssh_user=songhz ansible_ssh_pass=123456
+192.168.31.51

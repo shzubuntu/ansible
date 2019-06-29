@@ -59,12 +59,13 @@ def form(request):
 
 def home(request):
     context = {}
+    print("start#########")
     ansible = MyRunner('config/hosts')
     ansible.run('all', 'shell', "hostname")
     # 结果
     result = ansible.get_result()
 
-    #print json.dumps(result,indent=4)
+    print json.dumps(result,indent=4)
     hostlist=[]
     print(type(result))
     print result['success'].keys()
@@ -117,7 +118,7 @@ def form(request):
     context['hello'] = 'Hello World!aaaa'
     return render(request, 'form.html', context)
 
-def home(request):
+def home1(request):
     context = {}
     ansible = MyRunner('config/hosts')
     ansible.run('all', 'shell', "hostname")

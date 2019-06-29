@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load staticfiles %}
 {% block content %}
 <!--/span-->
 <div class="span10" id="content">
@@ -15,9 +16,9 @@
 					<table class="table">
 						<thead>
 							<tr>
-								<th>#</th>
-								<th>First Name</th>
-								<th>Last Name</th>
+								<th>id</th>
+								<th>hostname</th>
+								<th>ip</th>
 								<th>Username</th>
 							</tr>
 						</thead>
@@ -700,4 +701,28 @@
 
 
 </div>
+{% endblock %}
+{% block jsload %}
+<script src="{% static 'vendors/jquery-1.9.1.js' %}"></script>
+<script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
+<script src="{% static 'vendors/datatables/js/jquery.dataTables.min.js' %}"></script>
+
+<script src="{% static 'assets/scripts.js' %}"></script>
+<script src="{% static 'assets/DT_bootstrap.js' %}"></script>
+<script>
+function load_host_info(){
+	var response_data = new Array();
+	$.ajax({
+		url: "/get/host/info",
+		type: "GET",
+		dataType: "json",
+		success: function(result){
+			response_data = result.data		
+		}
+	}
+)};
+$(document).ready(function() {
+	load_host_info()
+});
+</script>
 {% endblock %}
