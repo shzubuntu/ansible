@@ -1,0 +1,13 @@
+sudo apt-get install git
+sudo apt-get install python3-pip
+pip3 install Django
+sudo apt-get install libmysqlclient-dev
+pip3 install pymysql
+sudo apt-get install mysql-server
+pip3 install mysql-python
+sudo apt-get install python-mysqldb
+pip3 install --upgrade mysqlclient
+pip3 install ansible
+pip3 install nmap
+sudo mysql_secure_installation 
+

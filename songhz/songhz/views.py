@@ -65,10 +65,10 @@ def home(request):
     # 结果
     result = ansible.get_result()
 
-    print json.dumps(result,indent=4)
+    print(json.dumps(result,indent=4))
     hostlist=[]
     print(type(result))
-    print result['success'].keys()
+    print(result['success'].keys())
     for host in result['success'].keys():
         res = result['success'][host]['stdout']
         hostlist.append((host,res))

@@ -90,7 +90,7 @@ DATABASES = {
         'NAME': 'songhz',
         'USER':'songhz',
         'PASSWORD':'123456',
-        'HOST':'',
+        'HOST':'localhost',
         'PORT':'',
     }
 }
