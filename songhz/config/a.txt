@@ -1,0 +1,87 @@
+
+									<table id="link_ext_org_table" class="table table-bordered display nowrap" width="100%">
+
+										<thead>
+											<tr>
+												<th style="display:none">id</th>
+												<th class="hasinput" style="width:auto">
+													<input type="text" class="form-control" placeholder="Filter" />
+												</th>
+												<th class="hasinput" style="width:auto">
+													<input type="text" class="form-control" placeholder="Filter" />
+												</th>
+												<th class="hasinput" style="width:auto">
+													<input type="text" class="form-control" placeholder="Filter" />
+												</th>
+												<th class="hasinput" style="width:auto">
+													<input type="text" class="form-control" placeholder="Filter" />
+												</th>
+												<th class="hasinput" style="width:auto">
+													<input type="text" class="form-control" placeholder="Filter" />
+												</th>
+												<th class="hasinput" style="width:auto">
+													<input type="text" class="form-control" placeholder="Filter" />
+												</th>
+												<th class="hasinput" style="width:auto">
+													<input type="text" class="form-control" placeholder="Filter" />
+												</th>
+												
+											<tr>
+												<th style="display:none">id</th>
+												<th style="width:auto">单位编号</th>
+												<th style="width:auto">单位简称</th>
+												<th style="width:auto">单位别名</th>
+												<th style="width:auto">单位性质</th>
+												<th style="width:auto">具体类型</th>
+												<th style="width:auto">曾用名</th>
+												<th style="width:auto">备注</th>
+												
+												
+											</tr>
+										</thead>
+										<tbody>
+											
+										</tbody>
+
+									</table>
+
+
+function link_ext_org_table_load(){
+    //加载外部单位信息表
+    if($("#link_ext_org_table").hasClass('dataTable')){
+        var dt = $("#link_ext_org_table").DataTable();
+        dt.clear();
+        dt.destroy();
+    }
+    var otable = $('#link_ext_org_table').DataTable({
+            "ajax": {
+                        "url": "/link/org/main/load",
+                        "dataSrc": "",
+                        "method" : "GET",   
+                    },
+            "columns":[
+                    {data:'id', "class":"hidden"},
+                    {data:'index_num'},
+                    {data:'simple_name'},
+                    {data:'alias'},
+                    {data:'classification'},
+                    {data:'type_detail'},
+                    {data:'used_name'},
+                    {data:'note'},
+            ],
+            "columnDefs":[
+                
+            ],
+            // "scrollX":true,
+            "iDisplayLength": 20, //每页显示数量
+            "sDom": "<'dt-toolbar'<'col-xs-12 col-sm-6 hidden-xs'><'col-sm-6 col-xs-12 hidden-xs'<'toolbar'>>r>"+
+                    "t"+
+                    "<'dt-toolbar-footer'<'col-sm-6 col-xs-12 hidden-xs'i><'col-xs-12 col-sm-6'p>>",
+            "autoWidth" : true,
+            "initComplete" : function () {
+                // $("#ext_org_s1").find("div .dt-toolbar").append(
+                // )
+            }
+
+        }); 
+}
